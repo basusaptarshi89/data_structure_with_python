@@ -65,6 +65,7 @@ class LinkedList:
         node = Node(data)
         if self.__is_empty():
             self.head = node
+            self.__increment_length()
         else:
             node.next = self.head
             self.head = node
