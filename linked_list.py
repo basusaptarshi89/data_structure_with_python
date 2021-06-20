@@ -141,7 +141,7 @@ class LinkedList:
         elif position == 0:
             node = self.remove()
             return node
-        elif position < (self.__get_length() - 1):
+        elif position <= (self.__get_length() - 1):
             current = self.head
             for _ in range(position):
                 previous = current
@@ -154,6 +154,10 @@ class LinkedList:
             return node
 
     def reverse(self):
+        """
+        Reverses the linked list
+        :return: None
+        """
         if self.__is_empty() or self.__get_length() == 1:
             return
         else:
@@ -167,3 +171,19 @@ class LinkedList:
                 next = current.next
             current.next = previous
             self.head = current
+
+    def remove_duplicate(self):
+        elements = set()
+        if self.__is_empty():
+            return
+        else:
+            previous = None
+            current = self.head
+            while current:
+                if current.data in elements:
+                    previous.next = current.next
+                    current = current.next
+                else:
+                    elements.add(current.data)
+                    previous = current
+                    current = current.next
