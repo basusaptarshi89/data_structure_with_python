@@ -101,3 +101,22 @@ print(f'Position: {2}')
 print(f'List: {llist}')
 print(f'Removed node:\n{node}')
 print()
+
+
+print('-'*50)
+print('Adding items to list')
+print('-'*50)
+
+for i in range(10, 13):
+    llist.add(i)
+    print(f'Added Item: {i}')
+print()
+print(f'List: {llist}')
+
+
+print('-'*50)
+print('Reverse items to list')
+print('-'*50)
+
+llist.reverse()
+print(f'List: {llist}')

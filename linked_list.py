@@ -152,3 +152,18 @@ class LinkedList:
         else:
             node = self.remove_at_end()
             return node
+
+    def reverse(self):
+        if self.__is_empty() or self.__get_length() == 1:
+            return
+        else:
+            previous = None
+            current = self.head
+            next = current.next
+            while next:
+                current.next = previous
+                previous = current
+                current = next
+                next = current.next
+            current.next = previous
+            self.head = current
